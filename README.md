@@ -1,4 +1,4 @@
-# Node + Express + + Mongoose + MongoDB
+# Node + Express + Mongoose + MongoDB
 Invoice Manager
 
 ## Completed
