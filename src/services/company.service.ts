@@ -31,7 +31,7 @@ export class CompanyService {
         return comapny;
     }
 
-    public async updateCompanyById(companyData: IPartialCompanyWithId) {
+    public async updateCompany(companyData: IPartialCompanyWithId) {
         const { _id, ...updateData } = companyData;
 
         const updatedCompany = await this.companyModel.findByIdAndUpdate(
@@ -46,14 +46,14 @@ export class CompanyService {
         return updatedCompany;
     }
 
-    public async deleteCompanyById(_id: string) {
-        const deletedComapny = await this.companyModel.findByIdAndDelete(_id);
+    public async deleteCompany(_id: string) {
+        const deletedCompany = await this.companyModel.findByIdAndDelete(_id);
 
-        if (!deletedComapny) {
+        if (!deletedCompany) {
             throw new Error(`Company with ID ${_id} not found`);
         }
 
-        return deletedComapny;
+        return deletedCompany;
     }
 
     public async findCompanies(pagination: Partial<ICompanyPagination>): Promise<{ data: ICompany[]; meta: {} }> {
@@ -62,7 +62,6 @@ export class CompanyService {
             page: pagination.page ?? 1,
             order: pagination.order ?? "asc",
         });
-        console.log(companies);
 
         return {
             data: companies,

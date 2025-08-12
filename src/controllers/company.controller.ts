@@ -47,7 +47,7 @@ export class CompanyController {
 
     public async updateCompany(id: string, updateData: Partial<ICompany>): Promise<Document> {
         try {
-            return await this.companyService.updateCompanyById({
+            return await this.companyService.updateCompany({
                 _id: id,
                 ...updateData
             });
@@ -58,7 +58,7 @@ export class CompanyController {
 
     public async handleDeleteCompany(id: string): Promise<Document> {
         try {
-            return await this.companyService.deleteCompanyById(id);
+            return await this.companyService.deleteCompany(id);
         } catch (error: any) {
             throw new Error(error.message || error);
         }

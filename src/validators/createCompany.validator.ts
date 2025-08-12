@@ -14,6 +14,13 @@ export const createCompanyValidator = checkSchema({
         },
         trim: true,
     },
+    registrationNumber: {
+        in: ["body"],
+        notEmpty: true,
+        errorMessage: "Company registration Number is required",
+        isString: true,
+        trim: true,
+    },
     email: {
         in: ["body"],
         optional: true,
