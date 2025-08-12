@@ -1,14 +1,15 @@
 # Node + Express + Mongoose + MongoDB
-Invoice Manager
+Invoice Manager - Simple app to manage invoices at different status
 
 ## Completed
 - Database connection & schema
 - Company API
+- Invoice API
 
 
 ## TODO Improvement
 - Write test case
-- Complete Invoice API
+- Complete Business Logic
 
 ## Running the App
 - npm install
